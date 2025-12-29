@@ -1,0 +1,20 @@
+.button {
+  padding: 15px 25px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.06);
+  }
+}
+
+.outlined {
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+
+.primary {
+  color: #fff;
+  background: var(--primary-color);
+}

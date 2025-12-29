@@ -1,0 +1,70 @@
+.operations {
+  color: white;
+  background: url('../../shared/images/image3.jpeg') center/cover no-repeat;
+  height: calc(100vh - 90px);
+
+  display: flex;
+  justify-content: center;
+
+  & > div {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  &_title {
+    font-size: 50px;
+    line-height: 1.2;
+    text-shadow:
+            20px 0 30px rgba(0, 0, 0, 1),
+            -20px 0 30px rgba(0, 0, 0, 1),
+            0 0 20px rgba(0, 0, 0, 1);
+  }
+
+  &_desc {
+    font-size: 24px;
+    text-shadow: 0 3px 8px rgba(0, 0, 0, .6), 0 6px 20px rgba(0, 0, 0, .4);
+
+  }
+
+  &_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+  }
+
+  &_intro {
+    display: flex;
+    padding: 30px 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    gap: 10px;
+
+    &_title {
+      font-size: 26px;
+
+    }
+
+    &_desc {
+      font-size: 20px;
+      text-align: center;
+    }
+
+    li {
+      font-size: 20px;
+      margin-bottom: 10px;
+
+      &::marker {
+        color: var(--primary-color);
+      }
+    }
+  }
+}
