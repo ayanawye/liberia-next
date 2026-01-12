@@ -44,7 +44,7 @@ body {
 
 .ant-menu-overflow-item {
   width: max-content !important;
-  min-width: 60px !important;
+  min-width: 90px !important;
   padding: 0 !important;
 }
 
@@ -59,13 +59,18 @@ body {
 .ant-menu-title-content {
   font-variation-settings: "wght" 400;
   text-decoration: none;
-  display: inline-block;
   font-size: 18px;
   color: #404040 !important;
+  display: flex;
+  align-items: center;
   transition:
           transform 0.5s,
           color 0.5s,
           font-variation-settings 0.5s;
+}
+
+.ant-menu-submenu-selected::after {
+  border: none !important;
 }
 
 .active {
@@ -140,12 +145,12 @@ span {
   color: var(--primary-color);
 }
 
-.ant-menu-horizontal > .ant-menu-item::after,
-.ant-menu-horizontal > .ant-menu-submenu::after,
-.ant-menu-item::after,
-.ant-menu-submenu::after {
-  border-bottom: none !important;
-}
+/*.ant-menu-horizontal > .ant-menu-item::after,*/
+/*.ant-menu-horizontal > .ant-menu-submenu::after,*/
+/*.ant-menu-item::after,*/
+/*.ant-menu-submenu::after {*/
+/*  border-bottom: none !important;*/
+/*}*/
 
 .ant-menu-horizontal > .ant-menu-item:hover::after,
 .ant-menu-horizontal > .ant-menu-submenu:hover::after,
@@ -161,5 +166,5 @@ span {
 
 .ant-menu-item:hover,
 .ant-menu-submenu-title:hover {
-  color: #E60039 !important; /* твой красный цвет бренда */
+  color: #E60039 !important;
 }

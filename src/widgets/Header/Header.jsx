@@ -4,7 +4,7 @@ import {HamburgerMenu} from "../HamburgerMenu/HamburgerMenu.jsx";
 import {useWindowWidth} from "@/shared/utils";
 import Logo from "@/shared/images/logo2.jpeg";
 import Image from "next/image";
-import {usePathname, useRouter} from "next/navigation";
+import {usePathname} from "next/navigation";
 import {Menu} from 'antd';
 
 import './Header.scss';
@@ -13,32 +13,50 @@ import Link from "next/link";
 const Header = () => {
     const width = useWindowWidth();
     const pathname = usePathname();
-    const navigation = useRouter();
+
+    console.log(pathname)
 
     const items = [
         {
-            label: 'About',
+            label: (
+                <>About
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                        <path d="M12 12.586 8.707 9.293l-1.414 1.414L12 15.414l4.707-4.707-1.414-1.414L12 12.586z"/>
+                    </svg>
+                </>
+            ),
             key: 'SubMenu',
             children: [
                 {
                     type: 'group',
                     label: null,
                     children: [
-                        { label: 'About us', key: '/about' },
-                        { label: 'Logistics Supply Chain', key: '/logistics-supply-chain' },
-                        { label: 'Channels', key: '/channels' },
-                        { label: 'Compliance Customs', key: '/compliance-customs' },
-                        { label: 'Maritime Ship Supply', key: '/maritime-ship-supply' },
-                        { label: 'Real Time Stock Visibility', key: '/real-time-stock-visibility' },
-                        { label: 'Temperature Humidity Control', key: '/temperature-humidity-control' },
+                        { label: (<Link
+                                href={'/about'}
+                                className={pathname === '/about' ? 'active link_header' : 'link_header'}>About us</Link>), key: '/about'},
+                        { label: <Link
+                                href={'/channels'}
+                                className={pathname === '/channels' ? 'active link_header' : 'link_header'}>Channels</Link>, key: '/channels' },
+                        { label: <Link
+                                href={'/real-time-stock-visibility'}
+                                className={pathname === '/real-time-stock-visibility' ? 'active link_header' : 'link_header'}>Real Time Stock Visibility</Link>, key: '/real-time-stock-visibility' },
+                        { label: <Link
+                                href={'/maritime-ship-supply'}
+                                className={pathname === '/maritime-ship-supply' ? 'active link_header' : 'link_header'}>Maritime Ship Supply</Link>, key: '/maritime-ship-supply' },
+                        { label: <Link
+                                href={'/logistics-supply-chain'}
+                                className={pathname === '/logistics-supply-chain' ? 'active link_header' : 'link_header'}>Logistics Supply Chain</Link>, key: '/logistics-supply-chain' },
+                        { label: <Link
+                                href={'/temperature-humidity-control'}
+                                className={pathname === '/temperature-humidity-control' ? 'active link_header' : 'link_header'}>Temperature Humidity Control</Link>, key: '/temperature-humidity-control' },
+                        { label: <Link
+                                href={'/compliance-customs'}
+                                className={pathname === '/compliance-customs' ? 'active link_header' : 'link_header'}>Compliance Customs</Link>, key: '/compliance-customs' },
                     ],
                 },
                 ]
         },
         ]
-    const onClick = e => {
-        navigation.push(e.key);
-    };
 
     const links = [
         { href: '/operations', label: 'Operations' },
@@ -57,7 +75,7 @@ const Header = () => {
                     ) :
                         <>
                             <nav className='header_nav'>
-                                <Menu onClick={onClick} mode="horizontal" items={items} />
+                                <Menu mode="horizontal" items={items} />
                                 {links.map(link => (
                                     <Link
                                         key={link.href}

@@ -27,11 +27,8 @@ const LogisticsSupplyChain = () => {
             </div>
             <div className='contact_content container'>
                 <h3>
-                    Business and institutional enquiries are handled on a professional basis only. Access is strictly limited to authorized partners, brand owners, and institutional stakeholders.</h3>
-                <div className='contact_details'>
-                    <Image src={Map} alt='map'/>
-                </div>
-                <ContactForm onFinish={onFinish} form={form}/>
+                    Liberia Duty Free operates bonded storage, import consolidation, port handling, secure inventory control, and controlled last-mile delivery aligned with real-time stock tracking.
+                </h3>
             </div>
         </div>
     );

@@ -37,18 +37,11 @@ const TemperatureHumidityControl = () => {
                 <div className='main_intro'>
                     <h2  className='main_intro_title'>Liberia Duty Free</h2>
                     <div className='line'/>
-                    <p className='main_intro_desc'>Liberia Duty Free operates within fully controlled and compliant duty-free environments, serving international travelers, maritime traffic, diplomatic missions, and authorized tax-exempt customers in Liberia. Operations are strictly limited to duty-free, bonded, and tax-exempt channels, ensuring full regulatory alignment, transparent sourcing, and long-term brand integrity.</p>
+                    <p className='main_intro_desc'>
+                        Specialized infrastructure supports temperature-controlled storage for confectionery and sensitive goods, and humidity-controlled environments for cigars and premium tobacco, with real-time monitoring across the supply chain.
+                    </p>
                 </div>
             </div>
-            <Modal
-                closable={true}
-                open={isModalOpen}
-                onCancel={handleCancel}
-                footer={null}
-                centered
-            >
-                <ContactForm onFinish={onFinish} form={form}/>
-            </Modal>
         </div>
     );
 };
